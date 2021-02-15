@@ -49,3 +49,38 @@ class Solution(object):
 
 # 풀이3) 내가 발표해야 할 풀이
 # 책의 2번풀이 (책 참조!!)
+
+######################################################################
+# 직접 연결리스트 개념을 활용해서 푼 풀이
+
+class Solution(object):
+    def swapPairs(self, head):
+        if head == None:
+            return
+        if head.next == None:
+            return head
+        
+        temp = head.next
+        head.next = head.next.next
+        temp.next = head
+        
+        answer = temp
+        
+        # print(answer)
+        while head.next and head.next.next:
+            temp = head.next
+            head.next = head.next.next
+            temp.next = head.next.next
+            head.next.next = temp
+            
+            
+            head = head.next.next
+            
+
+        # print(head)
+        # print(temp)
+        
+        # print(answer)
+        return answer
+
+
