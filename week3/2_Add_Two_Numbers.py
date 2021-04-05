@@ -51,3 +51,15 @@ class Solution(object):
         return temp
 
 
+'''
+class Solution(object):
+    def swapPairs(self, head):
+        # 값만 스위칭
+        ptr = head
+        while ptr and ptr.next:
+            ptr.val, ptr.next.val = ptr.next.val, ptr.val
+            ptr = ptr.next.next
+        
+        return head
+'''
+
